@@ -1,0 +1,32 @@
+{% extends 'bash.html' %}
+{% load static %}
+{% block body %}
+<h3 align="center" class="my-3">Search Books</h3>
+<div align="center">
+    <table id="myTable" style="width:900px" class="table table-border">
+        <thead style="background-color:#a0522d;color:white">
+        <tr>
+            <th>S.No</th>
+            <th>Book Name</th>
+            <th>Author Name</th>
+            <th>Category</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in data %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.book_name}}</td>
+            <td>{{i.author}}</td>
+            <td>{{i.category}}</td>
+
+        </tr>
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+{% endblock %}

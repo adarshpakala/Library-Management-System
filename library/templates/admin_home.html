@@ -1,0 +1,87 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+{% block body %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+<style>
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+
+
+.prjdiv:hover{
+transform:translateY(-10px)
+}
+div .container1{
+
+
+background-color:lightgrey;
+border-radius:8px;
+}
+h2, h4{
+ padding:10Px;
+}
+
+</style>
+
+
+
+<div class="container" style="margin-top:10%;">
+    <div class="row" >
+        <div class="col-md-6 prjdiv text-center">
+            <div class="container1">
+            <h2 style="color:blue">{{studentcount}}</h2>
+            <a href="{% url 'viewstudent' %}"><h4 style="color:black">Total Students</h4>
+
+        </a>
+            </div>
+        </div>
+        <div  class="col-md-6 prjdiv text-center">
+            <div class="container1">
+            <h2 style="color:blue">{{bookcount}}</h2>
+            <a href="{% url 'viewbook' %}"><h4 style="color:black">Total Books</h4>
+
+            </a>
+       </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+	<footer class="container pt-5 mt-5 text-center">
+
+
+
+            <p style = "font-size : 30pt ; color : #FF0000 ; font-weight : bold">
+
+
+
+                <span style = "color : #006400">This website is made with <i class=" icon-heart text-warning"></i> by </span><a class= "glow" href="#" target="_blank">ITA02</a>
+
+            </p>
+
+
+    </footer>
+
+
+{% endblock %}

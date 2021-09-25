@@ -1,0 +1,36 @@
+{% extends 'bash.html' %}
+{% load static %}
+{% block body %}
+
+    <center><h3 class="my-5">Edit Profile</h3></center>
+    <div class="container mt-3">
+    <table align="center">
+        <tr>
+            <td>
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <h4>First Name </h4><input type="text" name="fname" value="{{data.user.first_name}}"><br>
+                    <h4>Last Name </h4> <input type="text" name="lname" value="{{data.user.last_name}}"><br>
+                    <h4>Roll No</h4> <input type="text" name="roll no" value="{{data.rollNo}}" ><br>
+                    <h4>Branch </h4><input type="text" name="branch" value="{{data.branch}}"><br>
+                    <br>
+                    <center><input type="submit" class="btn"></center>
+                </form>
+            </td>
+         </tr>
+    </table>
+</div>
+
+
+{% ifequal error "no" %}
+<script>
+    alert('Profile Updated Successfully.');
+    window.location=('{% url 'viewprofile' request.user.id %}');
+</script>
+{% endifequal %}
+{% ifequal error "yes" %}
+<script>
+    alert('Something Went Wrong. Please try again');
+</script>
+{% endifequal %}
+{% endblock %}

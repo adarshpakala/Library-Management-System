@@ -1,0 +1,33 @@
+
+{% extends 'bash.html' %}
+{% load static %}
+{% block body %}
+
+
+        <h3 align="center" class="my-3">VIEW PROFILE</h3>
+            <div class="container">
+
+          <div class="row">
+    <div class="col-md-12 col-sm-12 col-sm-12 text-center" >
+       
+
+        
+                  <h3>Name : {{data.user.first_name}} {{data.user.last_name}}</h3>
+
+        
+            
+            <h3>Enrollment : {{data.rollNo}}</h3>
+            
+            
+                <h3>Branch : {{data.branch}}</h3>
+            
+            <br>
+     <a href="{% url 'editprofile' request.user.id %}" class="btn btn-primary">Edit Profile</a>
+
+    </div></div>
+
+
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,62 @@
+{% extends 'navigation.html' %}
+{% load static %}
+<style>
+    ul{ list-style-type: circle;}
+.container{
+padding:1px;
+margin:50px 250px;
+background-color: rgba(50, 115, 220, 0.3);
+border-radius:1px;
+width:900px;
+}
+.img{
+padding:0px 5px 25px 5px}
+
+
+</style>
+{% block body %}
+<center>
+    <h1 style="background-color:#a0522d;color:white;margin:10px 400px 10px 400px;border-radius:6px":>About Online Libray</h1>
+    <p> Library Management System. Library Management System is a software used to manages the catalog of a library. This helps to keep the records of whole transactions of the books available in the library. ... There are many features which helps librarian to keep records of available books as well as issued books.</p>
+ <div class="container"><hr>
+     <div class="row">
+    <div class=" col-md-4 col-sm-4 col-sm-4">  <img src="{% static 'images\img2.jpg' %}" style="height:200px;width:200px;border-radius:50%;margin-left:50px">
+  </div>
+    <div class="col-md-4 col-sm-4 col-sm-4">  <img src="{% static 'images\img3.jpg' %}" style="height:200px;width:200px;border-radius:50%;margin-left:50px">
+  </div>
+         <div class="col-md-4 col-sm-4 col-sm-4" >  <img src="{% static 'images\img4.png' %}" style="height:200px;width:200px;border-radius:50%;margin-left:50px">
+  </div>
+     </div>
+          <div class="row" style="padding:60px">
+    <div class="col-md-6 col-sm-6 col-xs-6">  <img src="{% static 'images\img5.jpg' %}" style="height:200px;width:200px;border-radius:50%;margin-left:50px">
+  </div>
+         <div class="col-md-6 col-sm-6col-sm-6">  <img src="{% static 'images\img6.png' %}" style="height:200px;width:200px;border-radius:50%;margin-left:50px">
+  </div>
+  </div>
+ </div>
+
+
+    </div><hr>
+    <h3 style="background-color:#a0522d;color:white;margin:10px 400px 10px 400px;border-radius:6px">Why We Use Online Library</h3>
+
+    <ul >
+    <li>Keep record of different categories like; Books, Journals, Newspapers, Magazines, etc.</li>
+    <li>Classify the books subject wise.</li>
+    <li>Easy way to enter new books.</li>
+    <li>Keep record of complete information of a book like; Book name, Author name, Publisher’s name, Date/ Year of publication, Cost of the book, Book purchasing date/ Bill no.</li>
+    <li>Easy way to make a check-out.</li>
+    <li>Easy way to make a check-in</li>.
+    <li>Automatic fine calculation for late returns.</li>
+    <li>Different criteria for searching a book.</li>
+    <li>Different kind of reports like; total no. of books, no. of issued books, no. of journals, etc.</li>
+    <li>Easy way to know how many books are issued to a particular student.</li>
+    <li>Easy way to know the status of a book.</li>
+    <li>Event calendar for librarian to remember their dates.</li>
+    <li>My Notes section for librarian to write any note.</li>
+    <li>Online access for registered user to see the status of their books.</li>
+    <li>Completely cloud based Library Management System.</li>
+    <li>No need to invest heavily on Hardware.</li>
+</ul>
+
+</center>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'bash.html' %}
+{% load static %}
+{% block body %}
+<center>
+
+<table>
+    <tr>
+        <th>
+            <h3 style="margin-left:450px">Book For Order</h3>
+            <div style="background-color:rgb(242,242,242);width:400px;height:200px;margin-left:450px">
+
+            <form method="post" action="" style="padding-top:40px;padding-left:40px">
+                    {% csrf_token %}
+
+                    <input type="text" placeholder="bookname" name="bookname" style="width:300px;height:40px">
+                     <br><br>
+                    <input type="text" placeholder="Authorname" name="authorname" style="width:300px;height:40px"><br><br>
+                    <input type="submit" value="search" >
+
+                </form>
+            </div>
+        </th>
+
+    </tr>
+    <tr>
+        <th class="container">
+        {% if error %}
+            <h3>Searched book</h3>
+    <table id="myTable"  class="table table-border" width="600" margin="50">
+        <thead >
+        <tr>
+            <th>S.No</th>
+            <th>Book Name</th>
+            <th>Author Name</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in data %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.title}}</td>
+            <td>{{i.Authorname}}</td>
+            <td> <button><a href="{% url 'orderbook' i.id %}">Order</a></button> </td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+            {% endif %}
+        </th>
+
+
+    </tr>
+</table>
+</center>
+
+{% endblock %}
